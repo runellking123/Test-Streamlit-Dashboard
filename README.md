@@ -1,6 +1,19 @@
-# Simple Clearance Tracker App
+# Spring 2026 Clearance Tracker
 
 A lightweight web-based student clearance tracker - no Xcode required!
+
+## 🌐 Live Dashboard
+
+**Access the dashboard online:** [https://institutionalresearchwiley.streamlit.app](https://institutionalresearchwiley.streamlit.app)
+
+- No installation required
+- Works on any device
+- Always up-to-date with the latest data
+- Share this link with anyone who needs access
+
+## 📦 Repository
+
+**GitHub:** [https://github.com/runellking123/Test-Streamlit-Dashboard](https://github.com/runellking123/Test-Streamlit-Dashboard)
 
 ## Features
 
@@ -19,8 +32,15 @@ A lightweight web-based student clearance tracker - no Xcode required!
   - Business Office Pending
   - IT Pending
   - Financial Aid Pending
-  - Residential Life Pending
+  - Residential Life Pending (automatically excludes commuters)
 - **Class Code Filter**: Filter by specific class codes (02, 04, GR, etc.)
+- **Attribute Filters**:
+  - Filter by student attributes (Athletics, Honor Society, etc.)
+  - Search within attributes
+- **Department Comparison**:
+  - Find students cleared for specific departments
+  - Find students NOT cleared for specific departments
+  - Combine filters to create complex queries
 
 ### 📈 Sorting Options
 - Name (A-Z)
@@ -35,10 +55,12 @@ A lightweight web-based student clearance tracker - no Xcode required!
 - Perfect for creating reports or working offline
 
 ### 📊 Statistics Dashboard
-- Total students count
+- Total students count (Undergraduate vs Graduate breakdown)
 - Fully cleared count
 - Pending clearance count
 - Department-wise pending counts in sidebar
+- Smart commuter handling (380 commuters auto-excluded from Residential Life counts)
+- Top student attributes with counts
 
 ### 🎨 Visual Features
 - Color-coded clearance status (✅ cleared, ❌ pending)
@@ -46,7 +68,9 @@ A lightweight web-based student clearance tracker - no Xcode required!
 - Color-coded AR balances (red for positive, green for zero/negative)
 - Department statistics at a glance
 
-## How to Run
+## How to Run Locally
+
+Want to run the dashboard on your computer instead of the cloud? Follow these steps:
 
 1. Open Terminal
 2. Navigate to this folder:
@@ -64,7 +88,9 @@ A lightweight web-based student clearance tracker - no Xcode required!
    python3 -m streamlit run app.py
    ```
 
-5. The app will automatically open in your web browser at http://localhost:8501
+5. The app will automatically open in your web browser at:
+   - **http://localhost:8501** (or next available port)
+   - Or click the Local URL shown in Terminal
 
 ## Updating Data
 
