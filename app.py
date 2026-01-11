@@ -6,7 +6,8 @@ import pandas as pd
 st.set_page_config(
     page_title="Spring 2026 Clearance Tracker",
     page_icon="✅",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 # Load data
