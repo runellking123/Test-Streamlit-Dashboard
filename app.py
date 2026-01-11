@@ -110,20 +110,25 @@ def load_data():
 
 # Main app
 def main():
-    # Header with logo
-    logo_path = Path("assets/wiley_logo.png")
-    if logo_path.exists():
-        col1, col2 = st.columns([1, 4])
-        with col1:
-            st.image(str(logo_path), width=150)
-        with col2:
-            st.title("Spring 2026 Clearance Tracker")
-            st.markdown(f"<h3 style='color: {WILEY_PURPLE}; font-style: italic; font-weight: 300;'>Go Forth Inspired.</h3>", unsafe_allow_html=True)
-    else:
-        st.title("🎓 Spring 2026 Clearance Tracker")
-        st.markdown(f"<h3 style='color: {WILEY_PURPLE}; font-style: italic; font-weight: 300;'>Go Forth Inspired.</h3>", unsafe_allow_html=True)
+    # Header with Wiley branding (text-based per brand guidelines)
+    st.markdown(f"""
+        <div style='text-align: left; padding: 1rem 0 0.5rem 0;'>
+            <h1 style='color: {WILDCAT_PURPLE}; font-size: 2.5rem; margin-bottom: 0; font-weight: 700; letter-spacing: 0.05em;'>
+                WILEY UNIVERSITY
+            </h1>
+            <p style='color: {CARBON}; font-size: 1.2rem; margin-top: 0.5rem; margin-bottom: 0;'>
+                Spring 2026 Clearance Tracker
+            </p>
+            <p style='color: {WILEY_PURPLE}; font-style: italic; font-weight: 300; font-size: 1.3rem; margin-top: 0.5rem;'>
+                Go Forth Inspired.
+            </p>
+            <p style='color: {CARBON}; font-size: 0.9rem; margin-top: 0.5rem;'>
+                Tracking 963 students
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
 
-    st.caption("Tracking 963 students")
+    st.divider()
 
     # Load student data
     df = load_data()
