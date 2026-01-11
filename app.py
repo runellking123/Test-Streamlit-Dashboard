@@ -26,6 +26,7 @@ def load_data():
 # Main app
 def main():
     st.title("🎓 Spring 2026 Clearance Tracker")
+    st.caption("Tracking 963 students")
 
     # Load student data
     df = load_data()
