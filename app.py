@@ -12,8 +12,14 @@ st.set_page_config(
 # Load data
 @st.cache_data
 def load_data():
-    with open('clearance_data.json', 'r') as f:
-        data = json.load(f)
+    # Try to load real data, fall back to sample data
+    try:
+        with open('clearance_data.json', 'r') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        # Use sample data if real data doesn't exist (e.g., in deployment)
+        with open('clearance_data_sample.json', 'r') as f:
+            data = json.load(f)
     return pd.DataFrame(data)
 
 # Main app
