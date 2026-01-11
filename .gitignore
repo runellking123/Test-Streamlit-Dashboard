@@ -1,0 +1,31 @@
+# Credentials and config files
+config.py
+test_connection.py
+test_databricks.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (sensitive)
+*.xlsx
+clearance_data.json

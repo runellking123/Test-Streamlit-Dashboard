@@ -1,0 +1,47 @@
+[
+  {
+    "idNumber": "000001",
+    "fullName": "Sample Student 1",
+    "businessOfficeCleared": true,
+    "itCleared": true,
+    "financialAidCleared": false,
+    "residentialLifeCleared": true,
+    "transactionDescription": "Registered",
+    "classCode": "02",
+    "dormBuilding": "Johnson Hall",
+    "dormRoom": "201",
+    "arBalance": 0.0,
+    "studentAttributes": "Athletics, Honor Society",
+    "isCommuter": false
+  },
+  {
+    "idNumber": "000002",
+    "fullName": "Sample Student 2",
+    "businessOfficeCleared": false,
+    "itCleared": true,
+    "financialAidCleared": true,
+    "residentialLifeCleared": false,
+    "transactionDescription": "Registered",
+    "classCode": "04",
+    "dormBuilding": "Smith Hall",
+    "dormRoom": "105",
+    "arBalance": 1250.50,
+    "studentAttributes": "Band",
+    "isCommuter": false
+  },
+  {
+    "idNumber": "000003",
+    "fullName": "Sample Student 3",
+    "businessOfficeCleared": true,
+    "itCleared": true,
+    "financialAidCleared": true,
+    "residentialLifeCleared": true,
+    "transactionDescription": "Registered",
+    "classCode": "GR",
+    "dormBuilding": "",
+    "dormRoom": "",
+    "arBalance": 0.0,
+    "studentAttributes": "",
+    "isCommuter": true
+  }
+]
