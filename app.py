@@ -1,14 +1,99 @@
 import streamlit as st
 import json
 import pandas as pd
+from pathlib import Path
 
 # Page configuration
 st.set_page_config(
-    page_title="Spring 2026 Clearance Tracker",
+    page_title="Spring 2026 Clearance Tracker - Wiley University",
     page_icon="✅",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Wiley University Brand Colors
+WILDCAT_PURPLE = "#3D2C68"
+WILEY_PURPLE = "#65538F"
+CARBON = "#414042"
+SILVER = "#B1B6C1"
+LIGHT_STONE = "#E2E2E2"
+
+# Custom CSS for Wiley branding
+st.markdown(f"""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+    /* Apply Open Sans font globally */
+    html, body, [class*="css"] {{
+        font-family: 'Open Sans', sans-serif;
+    }}
+
+    /* Header styling */
+    h1, h2, h3, h4, h5, h6 {{
+        font-family: 'Open Sans', sans-serif;
+        color: {WILDCAT_PURPLE};
+        font-weight: 700;
+    }}
+
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {{
+        background-color: {LIGHT_STONE};
+    }}
+
+    [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {{
+        color: {WILDCAT_PURPLE};
+    }}
+
+    /* Button styling */
+    .stButton>button {{
+        background-color: {WILEY_PURPLE};
+        color: white;
+        border: none;
+        font-weight: 500;
+    }}
+
+    .stButton>button:hover {{
+        background-color: {WILDCAT_PURPLE};
+    }}
+
+    /* Metric styling */
+    [data-testid="stMetricValue"] {{
+        color: {WILDCAT_PURPLE};
+        font-weight: 700;
+    }}
+
+    /* Download button */
+    .stDownloadButton>button {{
+        background-color: {WILEY_PURPLE};
+        color: white;
+        border: none;
+        font-weight: 500;
+    }}
+
+    .stDownloadButton>button:hover {{
+        background-color: {WILDCAT_PURPLE};
+    }}
+
+    /* Selectbox and input styling */
+    .stSelectbox label, .stTextInput label, .stMultiselect label {{
+        color: {CARBON};
+        font-weight: 500;
+    }}
+
+    /* Radio button styling */
+    .stRadio label {{
+        color: {CARBON};
+        font-weight: 500;
+    }}
+
+    /* Expander styling */
+    .streamlit-expanderHeader {{
+        background-color: {LIGHT_STONE};
+        color: {WILDCAT_PURPLE};
+        font-weight: 500;
+    }}
+</style>
+""", unsafe_allow_html=True)
 
 # Load data
 @st.cache_data
@@ -25,7 +110,19 @@ def load_data():
 
 # Main app
 def main():
-    st.title("🎓 Spring 2026 Clearance Tracker")
+    # Header with logo
+    logo_path = Path("assets/wiley_logo.png")
+    if logo_path.exists():
+        col1, col2 = st.columns([1, 4])
+        with col1:
+            st.image(str(logo_path), width=150)
+        with col2:
+            st.title("Spring 2026 Clearance Tracker")
+            st.markdown(f"<h3 style='color: {WILEY_PURPLE}; font-style: italic; font-weight: 300;'>Go Forth Inspired.</h3>", unsafe_allow_html=True)
+    else:
+        st.title("🎓 Spring 2026 Clearance Tracker")
+        st.markdown(f"<h3 style='color: {WILEY_PURPLE}; font-style: italic; font-weight: 300;'>Go Forth Inspired.</h3>", unsafe_allow_html=True)
+
     st.caption("Tracking 963 students")
 
     # Load student data
