@@ -28,4 +28,4 @@ Thumbs.db
 
 # Data files (sensitive)
 *.xlsx
-# clearance_data.json - Now included since repo is private
+clearance_data.json
